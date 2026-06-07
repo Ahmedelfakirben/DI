@@ -37,10 +37,10 @@ export default async function DatesPage({ params }) {
     <div className="relative min-h-screen bg-bg text-white overflow-hidden">
       {/* Full-page Background Image and Overlays */}
       <div 
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat pointer-events-none z-0" 
+        className="absolute top-0 left-0 right-0 h-[800px] md:h-[1000px] bg-cover bg-top bg-no-repeat pointer-events-none z-0" 
         style={{ backgroundImage: "url('/assets/hero_dates.png')" }} 
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/75 to-bg pointer-events-none z-0" />
+      <div className="absolute top-0 left-0 right-0 h-[800px] md:h-[1000px] bg-gradient-to-b from-navy-950/15 via-navy-950/40 to-bg pointer-events-none z-0" />
       
       {/* Orbs wrapper */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

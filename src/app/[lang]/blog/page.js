@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTranslation } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Award, Lightbulb, Globe, FileText, Newspaper } from 'lucide-react';
 import { ParallaxOrb } from '@/components/AmbientGlow';
 
 async function getBlogPosts(lang) {
@@ -47,9 +47,16 @@ export default async function BlogPage({ params }) {
     });
   };
 
-  const getCategoryEmoji = (cat) => {
-    const map = { telc: '🏅', conseils: '💡', integration: '🌍', examen: '📝', general: '📖' };
-    return map[cat] || '📰';
+  const getCategoryIcon = (cat) => {
+    const icons = {
+      telc: Award,
+      conseils: Lightbulb,
+      integration: Globe,
+      examen: FileText,
+      general: BookOpen
+    };
+    const IconComponent = icons[cat] || Newspaper;
+    return <IconComponent className="w-12 h-12 text-gold-400 filter drop-shadow-md" />;
   };
 
   return (
@@ -59,7 +66,7 @@ export default async function BlogPage({ params }) {
         className="absolute inset-0 bg-cover bg-top bg-no-repeat pointer-events-none z-0" 
         style={{ backgroundImage: "url('/assets/hero_blog.png')" }} 
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/75 to-bg pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/15 via-navy-950/40 to-bg pointer-events-none z-0" />
       
       {/* Orbs wrapper */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -95,8 +102,8 @@ export default async function BlogPage({ params }) {
                     className="card-navy-glass rounded-3xl overflow-hidden flex flex-col h-full group"
                   >
                     <Link href={`/${lang}/blog/${post.slug || post.id}`} className="flex flex-col h-full">
-                      <div className="aspect-video w-full bg-navy-800 flex items-center justify-center text-5xl group-hover:scale-105 transition-transform duration-300 border-b border-gold-400/5">
-                        {getCategoryEmoji(post.category)}
+                      <div className="aspect-video w-full bg-navy-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border-b border-gold-400/5">
+                        {getCategoryIcon(post.category)}
                       </div>
                       <div className="p-6 flex-grow flex flex-col justify-between">
                         <div className="flex flex-col gap-2.5">

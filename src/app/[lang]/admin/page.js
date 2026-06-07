@@ -410,7 +410,7 @@ export default function AdminDashboard({ params }) {
 
   const handleUpdateRegStatus = async (id, status, notes) => {
     try {
-      const res = await updateRegistrationStatus(id, status, notes);
+      const res = await updateRegistrationStatus(id, status, notes, lang);
       if (res.success) {
         loadAllData();
       } else {

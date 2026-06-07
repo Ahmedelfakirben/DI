@@ -2,6 +2,7 @@
 
 import { createClient } from '@supabase/supabase-js';
 import { cookies } from 'next/headers';
+import { sendPaymentConfirmationEmailAction } from './registrations';
 
 // Check if we are running in Demo Mode (when keys are missing)
 const isDemoMode = !process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -396,7 +397,7 @@ export async function getRegistrationsList() {
   }
 }
 
-export async function updateRegistrationStatus(id, payment_status, notes) {
+export async function updateRegistrationStatus(id, payment_status, notes, lang = 'fr') {
   await requireAuth();
 
   if (isDemoMode) {
@@ -404,9 +405,9 @@ export async function updateRegistrationStatus(id, payment_status, notes) {
     if (idx !== -1) {
       const reg = demoRegistrations[idx];
       const examIdx = demoExams.findIndex(e => e.id === reg.exam_date_id);
+      const oldStatus = reg.payment_status;
       
       if (examIdx !== -1) {
-        const oldStatus = reg.payment_status;
         if (oldStatus !== 'cancelled' && payment_status === 'cancelled') {
           // Restore spot
           demoExams[examIdx].available_spots = Math.min(demoExams[examIdx].available_spots + 1, demoExams[examIdx].total_spots);
@@ -420,6 +421,14 @@ export async function updateRegistrationStatus(id, payment_status, notes) {
 
       demoRegistrations[idx].payment_status = payment_status;
       demoRegistrations[idx].notes = notes;
+
+      if (oldStatus !== 'confirmed' && payment_status === 'confirmed') {
+        const examDetails = demoExams[examIdx];
+        if (examDetails) {
+          await sendPaymentConfirmationEmailAction(demoRegistrations[idx], examDetails, lang);
+        }
+      }
+
       return { success: true, registration: demoRegistrations[idx] };
     }
     return { success: false, error: 'Registration not found' };
@@ -427,6 +436,17 @@ export async function updateRegistrationStatus(id, payment_status, notes) {
 
   const supabase = getAdminSupabase();
   try {
+    // 1. Fetch current status to check if it changes to confirmed
+    const { data: oldReg, error: getErr } = await supabase
+      .from('registrations')
+      .select('payment_status')
+      .eq('id', id)
+      .single();
+    
+    if (getErr) throw getErr;
+    const oldStatus = oldReg ? oldReg.payment_status : null;
+
+    // 2. Perform database update
     const { data, error } = await supabase
       .from('registrations')
       .update({ payment_status, notes })
@@ -434,7 +454,22 @@ export async function updateRegistrationStatus(id, payment_status, notes) {
       .select();
 
     if (error) throw error;
-    return { success: true, registration: data[0] };
+    const updatedReg = data[0];
+
+    // 3. Send email on payment confirmation
+    if (oldStatus !== 'confirmed' && payment_status === 'confirmed') {
+      const { data: examDetails, error: examErr } = await supabase
+        .from('exam_dates')
+        .select('*')
+        .eq('id', updatedReg.exam_date_id)
+        .single();
+      
+      if (!examErr && examDetails) {
+        await sendPaymentConfirmationEmailAction(updatedReg, examDetails, lang);
+      }
+    }
+
+    return { success: true, registration: updatedReg };
   } catch (e) {
     console.error("Registration update failed:", e);
     return { success: false, error: e.message };

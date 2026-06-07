@@ -20,7 +20,7 @@ export default function ExamensPage({ params: paramsPromise }) {
         className="absolute inset-0 bg-cover bg-top bg-no-repeat pointer-events-none z-0" 
         style={{ backgroundImage: "url('/assets/hero_examens.png')" }} 
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/75 to-bg pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/15 via-navy-950/40 to-bg pointer-events-none z-0" />
       
       {/* Orbs wrapper */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

@@ -132,10 +132,6 @@ export default function Footer() {
             <Link href={`/${lang}/terms`} className="hover:text-gold-400 transition-colors">
               {t('footer_terms')}
             </Link>
-            <span className="text-white/20">|</span>
-            <Link href={`/${lang}/admin`} className="hover:text-gold-400 transition-colors font-bold uppercase tracking-wider text-[10px] text-gold-400">
-              Admin
-            </Link>
           </div>
         </div>
       </div>

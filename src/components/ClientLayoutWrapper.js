@@ -21,12 +21,14 @@ export default function ClientLayoutWrapper({ children }) {
   }
 
   const isHome = pathname === '/' || pathname === '/fr' || pathname === '/en' || pathname === '/de';
+  const immersiveBgPages = ['/offres', '/examens', '/dates', '/blog', '/faq', '/contact'];
+  const hasImmersiveBg = immersiveBgPages.some(p => pathname?.endsWith(p));
 
   return (
     <>
       <PageLoader />
       <Navbar />
-      <main className={`flex-grow ${isHome ? '' : 'pt-[88px]'}`}>
+      <main className={`flex-grow ${isHome || hasImmersiveBg ? '' : 'pt-[88px]'}`}>
         {children}
       </main>
       <Footer />
