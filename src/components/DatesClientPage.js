@@ -252,7 +252,7 @@ export default function DatesClientPage({ lang, initialExams }) {
   };
 
   return (
-    <section className="py-16 section-navy-mid">
+    <div className="bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         {/* Two-column layout: Calendar + Filters/Table */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
@@ -439,7 +439,7 @@ export default function DatesClientPage({ lang, initialExams }) {
           </div>
         )}
       </div>
+      </div>
     </div>
-  </section>
   );
 }

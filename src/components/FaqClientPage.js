@@ -14,7 +14,7 @@ export default function FaqClientPage({ lang, initialFaqs }) {
   };
 
   return (
-    <section className="py-20 section-navy-mid">
+    <div className="bg-transparent">
       <div className="max-w-3xl mx-auto px-6">
       {initialFaqs.length === 0 ? (
         <div className="text-center py-16 card-navy-glass border border-gold-400/10 rounded-[32px] text-navy-200">
@@ -64,6 +64,6 @@ export default function FaqClientPage({ lang, initialFaqs }) {
         </div>
       )}
       </div>
-    </section>
+    </div>
   );
 }
