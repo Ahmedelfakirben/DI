@@ -1,0 +1,712 @@
+// ============================================================
+// Sigma DI — Multi-language (i18n) Engine
+// Supported: French (fr), English (en), German (de)
+// ============================================================
+
+'use strict';
+
+const translations = {
+  fr: {
+    // Navigation
+    nav_offres: "Nos offres",
+    nav_examens: "Examens telc",
+    nav_dates: "Dates",
+    nav_blog: "Blog",
+    nav_faq: "FAQ",
+    nav_contact: "Contact",
+    nav_cta: "S'inscrire",
+
+    // Hero
+    hero_badge: "Centre d'examen officiel telc agréé",
+    hero_title: "Apprenez l'allemand avec <em>succès</em> & réussissez les examens <em>telc</em>",
+    hero_desc: "Votre académie pour une formation linguistique moderne, des certificats reconnus et une préparation professionnelle aux examens.",
+    hero_partner: "En partenariat avec notre centre d'examen à Francfort — <span>telc B1 & B2 numériques</span>",
+    hero_btn_register: "S'inscrire maintenant",
+    hero_btn_dates: "Voir les dates",
+    hero_btn_advice: "Rendez-vous conseil",
+    hero_stat_cert: "Certifiés",
+    hero_stat_success: "Taux de réussite",
+    hero_stat_exp: "Années d'expérience",
+    hero_cert_b1: "Examen Officiel",
+    hero_cert_b2: "Examen Officiel",
+
+    // Welcome
+    welcome_eyebrow: "Notre académie",
+    welcome_title: "Bienvenue dans notre académie",
+    welcome_p1: "Notre académie accompagne les apprenants tout au long de leur parcours – du premier cours d’allemand jusqu’à l’obtention du certificat telc.",
+    welcome_p2: "Grâce à des enseignants expérimentés, des méthodes pédagogiques modernes et un accompagnement personnalisé, nous créons un environnement d’apprentissage idéal pour votre réussite.",
+    welcome_p3: "Que ce soit pour le travail, les études, un visa ou la naturalisation – nous vous aidons à atteindre vos objectifs linguistiques en toute sécurité.",
+    welcome_tag_work: "💼 Travail",
+    welcome_tag_studies: "🎓 Études",
+    welcome_tag_visa: "🛂 Visa",
+    welcome_tag_nat: "🏛️ Naturalisation",
+
+    // Offers
+    offers_eyebrow: "Ce que nous proposons",
+    offers_title: "Nos offres",
+    offers_lead: "Des programmes d'apprentissage modernes et ciblés pour concrétiser vos projets.",
+    offers_card1_title: "Examens telc",
+    offers_card1_desc: "Examens officiels telc numériques avec certificats reconnus aux niveaux B1 et B2 selon les normes du CECR. Valables pour les visas, l'emploi et la naturalisation.",
+    offers_card2_badge: "Recommandé",
+    offers_card2_title: "Préparation aux examens",
+    offers_card2_desc: "Cours de préparation ciblés avec tests modèles officiels, simulations réalistes d'examen et feedback personnalisé par nos enseignants experts.",
+    offers_card3_title: "Cours en ligne",
+    offers_card3_desc: "Apprentissage flexible et interactif – apprenez l'allemand à votre rythme depuis chez vous grâce à nos modules de cours à distance.",
+
+    // Why us
+    why_eyebrow: "Vos atouts",
+    why_title: "Pourquoi notre académie ?",
+    why_lead: "We combine all key success factors to guarantee fast and certified progress.",
+    why_item1: "Enseignants certifiés et expérimentés",
+    why_item2: "Direction allemande",
+    why_item3: "Centre d'examen officiel agréé",
+    why_item4: "Horaires flexibles",
+    why_item5: "Supports pédagogiques modernes",
+    why_item6: "Accompagnement personnalisé",
+
+    // About us / Values
+    about_eyebrow: "Qui sommes-nous",
+    about_title: "À propos de nous",
+    about_lead: "Sigma Deutsch Institut est synonyme d'éducation de qualité, de formation linguistique moderne et d'accompagnement individuel vers la réussite.",
+    value1_title: "Qualité",
+    value1_desc: "Un enseignement professionnel avec des méthodes pédagogiques modernes basées sur l'excellence académique.",
+    value2_title: "Respect",
+    value2_desc: "Un environnement d'apprentissage ouvert et bienveillant favorisant l'échange entre toutes les cultures.",
+    value3_title: "Réussite",
+    value3_desc: "Un suivi personnalisé pour ouvrir de nouvelles perspectives professionnelles et académiques à chaque apprenant.",
+
+    // Exams B1/B2
+    exams_eyebrow: "Certification officielle",
+    exams_title: "Examens de langue telc",
+    exams_lead: "Nous proposons des examens officiels telc aux niveaux B1 et B2. Les certificats sont reconnus à l'international et acceptés pour le travail, les études, les visas et la naturalisation.",
+    exams_level_b1: "Niveau B1 — CECR",
+    exams_level_b2: "Niveau B2 — CECR",
+    exams_b1_desc: "L'examen telc B1 confirme des compétences linguistiques autonomes dans la vie quotidienne et professionnelle.",
+    exams_b2_desc: "L'examen telc B2 valide des compétences linguistiques avancées et des connaissances approfondies.",
+    exams_b1_item1: "Compréhension écrite",
+    exams_b1_item2: "Compréhension orale",
+    exams_b1_item3: "Expression écrite",
+    exams_b1_item4: "Expression orale",
+    exams_b2_item1: "Reconnu par les employeurs",
+    exams_b2_item2: "Accès à de nombreuses formations et universités",
+    exams_b2_item3: "Certificat crucial pour la carrière professionnelle",
+    exams_b2_item4: "Valable pour les visas et la naturalisation",
+    exams_btn_register_b1: "S'inscrire à telc B1",
+    exams_btn_register_b2: "S'inscrire à telc B2",
+
+    // Prep
+    prep_eyebrow: "Une préparation réussie",
+    prep_title: "Une préparation sur mesure",
+    prep_desc: "Nos cours vous aident à vous préparer de manière ciblée et efficace à votre examen telc. Avec nos méthodes éprouvées, nos apprenants atteignent un taux de réussite exceptionnel.",
+    prep_btn: "Demander un programme",
+    prep_feat1_title: "Tests modèles",
+    prep_feat1_sub: "Entraînements officiels récents",
+    prep_feat2_title: "Simulations",
+    prep_feat2_sub: "Mises en situation réelles d'examen",
+    prep_feat3_title: "Feedback perso.",
+    prep_feat3_sub: "Corrections individualisées",
+    prep_feat4_title: "Stratégies",
+    prep_feat4_sub: "Méthodes exclusives de réussite",
+
+    // Dates & Filter
+    dates_eyebrow: "Prochaines sessions",
+    dates_title: "Dates actuelles",
+    dates_lead: "Retrouvez ici toutes les prochaines dates d'examen telc de notre académie. Le paiement s'effectue hors ligne (espèces sur place ou virement bancaire après validation).",
+    filter_all: "Tous les examens",
+    filter_b1: "telc B1",
+    filter_b2: "telc B2",
+    filter_modules: "Modules",
+    search_placeholder: "Rechercher…",
+    table_head_level: "Niveau",
+    table_head_date: "Date de l'examen",
+    table_head_time: "Heure",
+    table_head_deadline: "Limite d'inscription",
+    table_head_spots: "Places",
+    table_head_price: "Prix",
+    table_head_status: "Statut",
+    table_head_action: "Action",
+    table_no_results: "Aucune date d'examen trouvée pour ce filtre.",
+
+    // Service & Info
+    service_eyebrow: "Aide & support",
+    service_title: "Service & Informations",
+    service_card1_title: "Qu'est-ce que telc ?",
+    service_card1_desc: "telc est l'un des principaux organismes d'examens de langues en Europe. Ses certificats sont mondialement reconnus par les employeurs et administrations.",
+    service_card2_title: "Questions fréquentes",
+    service_card2_desc: "Consultez notre section FAQ pour trouver rapidement des réponses sur l'inscription, la remise des diplômes et la politique tarifaire.",
+    service_card2_btn: "Voir la FAQ",
+    service_card3_title: "Service client",
+    service_card3_desc: "Notre équipe administrative reste disponible du lundi au vendredi (09h00–16h00) pour répondre à toutes vos interrogations.",
+    service_card3_btn: "Nous contacter",
+
+    // Blog
+    blog_eyebrow: "Conseils & actualités",
+    blog_title: "Apprendre l'allemand facilement",
+    blog_lead: "Des conseils méthodologiques utiles pour vos examens et l'amélioration de votre allemand quotidien.",
+
+    // FAQ
+    faq_eyebrow: "Vos questions",
+    faq_title: "Questions fréquentes",
+
+    // Contact
+    contact_eyebrow: "Nous contacter",
+    contact_title: "Contactez-nous",
+    contact_lead: "Une question sur nos dates d'examen ou notre centre ? Contactez-nous à tout moment.",
+    contact_card_title: "Coordonnées",
+    contact_label_phone: "Téléphone",
+    contact_label_email: "E-mail",
+    contact_label_whatsapp: "WhatsApp",
+    contact_label_address: "Adresse",
+    contact_address_val: "Casablanca, Maroc (Adresse à préciser prochainement)",
+    contact_hours_title: "🕐 Horaires d'ouverture",
+    contact_hours_val: "Lundi – Vendredi : 09h00 – 16h00",
+    form_label_name: "Nom complet *",
+    form_placeholder_name: "Jean Dupont",
+    form_label_email: "E-mail *",
+    form_placeholder_email: "jean@example.com",
+    form_label_phone: "Téléphone",
+    form_placeholder_phone: "+212 6XX XX XX XX",
+    form_label_subject: "Sujet",
+    form_placeholder_subject: "Sujet de votre demande",
+    form_label_message: "Message *",
+    form_placeholder_message: "Votre message…",
+    form_btn_submit: "Envoyer le message",
+
+    // Footer
+    footer_desc: "Académie d'allemand d'élite, spécialisée dans la formation et la préparation officielle aux examens de certification telc B1 et B2.",
+    footer_col_nav: "Navigation",
+    footer_col_info: "Informations",
+    footer_col_contact: "Contact",
+    footer_copyright: "© 2026 Sigma DI — Tous droits réservés. Mentions legales conformes au droit marocain.",
+    footer_privacy: "Protection des données",
+    footer_terms: "Conditions générales",
+    footer_legal: "Mentions légales",
+
+    // Modals Inscription
+    modal_reg_title: "S'inscrire à l'examen",
+    modal_reg_subtitle: "Remplissez le formulaire pour réserver votre place",
+    step_info: "Vos informations",
+    step_confirm: "Confirmation",
+    form_label_firstname: "Prénom *",
+    form_placeholder_firstname: "Marie",
+    form_label_lastname: "Nom *",
+    form_placeholder_lastname: "Dupont",
+    form_label_whatsapp: "WhatsApp",
+    form_placeholder_whatsapp: "+212 6XX XX XX XX",
+    form_label_nationality: "Nationalité",
+    form_placeholder_nationality: "Marocaine, Française…",
+    modal_reg_recap: "Récapitulatif :",
+    form_label_payment: "Mode de paiement *",
+    payment_cash: "Sur place (espèces)",
+    payment_transfer: "Virement bancaire",
+    checkbox_terms: "J'accepte les conditions générales et la politique de protection des données de Sigma DI.",
+    success_reg_title: "Inscription enregistrée !",
+    success_reg_desc: "Votre inscription a été reçue avec succès. Vous recevrez une confirmation par e-mail ou WhatsApp sous 24h avec les informations de paiement.",
+    btn_back: "← Retour",
+    btn_continue: "Continuer →",
+    btn_confirm: "Confirmer l'inscription",
+
+    // Modal Advice
+    modal_advice_title: "Prendre un rendez-vous",
+    modal_advice_subtitle: "Réservez un créneau de conseil personnalisé",
+    form_label_date: "Date souhaitée",
+    form_label_time: "Heure souhaitée",
+    form_label_topic: "Sujet de consultation",
+    topic_general: "Information générale",
+    topic_b1: "Examen telc B1",
+    topic_b2: "Examen telc B2",
+    topic_prep: "Cours de préparation",
+    success_advice_title: "Demande reçue !",
+    success_advice_desc: "Votre demande de rendez-vous a bien été enregistrée. Notre équipe vous contactera rapidement pour confirmer le créneau.",
+    btn_cancel: "Annuler",
+    btn_confirm_advice: "Confirmer le rendez-vous"
+  },
+  en: {
+    // Navigation
+    nav_offres: "Our Offers",
+    nav_examens: "telc Exams",
+    nav_dates: "Dates",
+    nav_blog: "Blog",
+    nav_faq: "FAQ",
+    nav_contact: "Contact",
+    nav_cta: "Register",
+
+    // Hero
+    hero_badge: "Official Accredited telc Exam Center",
+    hero_title: "Learn German with <em>success</em> & pass the <em>telc</em> exams",
+    hero_desc: "Your academy for modern language training, recognized certificates, and professional exam preparation.",
+    hero_partner: "In partnership with our exam center in Frankfurt — <span>digital telc B1 & B2</span>",
+    hero_btn_register: "Register Now",
+    hero_btn_dates: "View Dates",
+    hero_btn_advice: "Get Advice",
+    hero_stat_cert: "Certified",
+    hero_stat_success: "Success Rate",
+    hero_stat_exp: "Years of Experience",
+    hero_cert_b1: "Official Exam",
+    hero_cert_b2: "Official Exam",
+
+    // Welcome
+    welcome_eyebrow: "Our Academy",
+    welcome_title: "Welcome to Our Academy",
+    welcome_p1: "Our academy supports learners throughout their journey – from their very first German class to obtaining the telc certificate.",
+    welcome_p2: "Thanks to experienced teachers, modern teaching methods, and personalized support, we create the ideal learning environment for your success.",
+    welcome_p3: "Whether for work, studies, a visa, or naturalization – we help you reach your language goals safely.",
+    welcome_tag_work: "💼 Work",
+    welcome_tag_studies: "🎓 Studies",
+    welcome_tag_visa: "🛂 Visa",
+    welcome_tag_nat: "🏛️ Naturalization",
+
+    // Offers
+    offers_eyebrow: "What We Offer",
+    offers_title: "Our Offers",
+    offers_lead: "Modern and targeted learning programs to turn your plans into reality.",
+    offers_card1_title: "telc Exams",
+    offers_card1_desc: "Official digital telc exams with recognized certificates at B1 and B2 levels according to CEFR standards. Valid for visas, employment, and naturalization.",
+    offers_card2_badge: "Recommended",
+    offers_card2_title: "Exam Preparation",
+    offers_card2_desc: "Targeted preparation courses with official model tests, realistic exam simulations, and personalized feedback from our expert teachers.",
+    offers_card3_title: "Online Courses",
+    offers_card3_desc: "Flexible and interactive learning – learn German at your own pace from home with our remote course modules.",
+
+    // Why us
+    why_eyebrow: "Our Strengths",
+    why_title: "Why Our Academy?",
+    why_lead: "We combine all key success factors to guarantee fast and certified progress.",
+    why_item1: "Certified and experienced teachers",
+    why_item2: "German direction",
+    why_item3: "Accredited official exam center",
+    why_item4: "Flexible schedule",
+    why_item5: "Modern educational materials",
+    why_item6: "Personalized support",
+
+    // About us / Values
+    about_eyebrow: "Who We Are",
+    about_title: "About Us",
+    about_lead: "Sigma Deutsch Institut stands for quality education, modern language training, and individual guidance toward success.",
+    value1_title: "Quality",
+    value1_desc: "Professional teaching using modern pedagogical methods based on academic excellence.",
+    value2_title: "Respect",
+    value2_desc: "An open and caring learning environment that encourages exchange across all cultures.",
+    value3_title: "Success",
+    value3_desc: "Personalized follow-up to unlock new professional and academic prospects for every learner.",
+
+    // Exams B1/B2
+    exams_eyebrow: "Official Certification",
+    exams_title: "telc Language Exams",
+    exams_lead: "We offer official telc exams at B1 and B2 levels. Certificates are internationally recognized and accepted for work, studies, visas, and naturalization.",
+    exams_level_b1: "Level B1 — CEFR",
+    exams_level_b2: "Level B2 — CEFR",
+    exams_b1_desc: "The telc B1 exam confirms independent language skills in everyday and professional life.",
+    exams_b2_desc: "The telc B2 exam validates advanced language skills and comprehensive knowledge.",
+    exams_b1_item1: "Reading comprehension",
+    exams_b1_item2: "Listening comprehension",
+    exams_b1_item3: "Written expression",
+    exams_b1_item4: "Oral expression",
+    exams_b2_item1: "Recognized by employers",
+    exams_b2_item2: "Access to higher education and universities",
+    exams_b2_item3: "Crucial certificate for your career",
+    exams_b2_item4: "Valid for visa and naturalization",
+    exams_btn_register_b1: "Register for telc B1",
+    exams_btn_register_b2: "Register for telc B2",
+
+    // Prep
+    prep_eyebrow: "Successful Preparation",
+    prep_title: "Customized Preparation",
+    prep_desc: "Our courses help you prepare specifically and effectively for your telc exam. With our proven methods, our learners achieve an exceptional success rate.",
+    prep_btn: "Request a Program",
+    prep_feat1_title: "Model Tests",
+    prep_feat1_sub: "Recent official practice exams",
+    prep_feat2_title: "Simulations",
+    prep_feat2_sub: "Real timed exam conditions",
+    prep_feat3_title: "Personalized Feedback",
+    prep_feat3_sub: "Individualized corrections",
+    prep_feat4_title: "Strategies",
+    prep_feat4_sub: "Exclusive key methods for success",
+
+    // Dates & Filter
+    dates_eyebrow: "Next Sessions",
+    dates_title: "Current Dates",
+    dates_lead: "Find all upcoming telc exam dates of our academy here. Payment is made offline (cash on-site or bank transfer after validation).",
+    filter_all: "All exams",
+    filter_b1: "telc B1",
+    filter_b2: "telc B2",
+    filter_modules: "Modules",
+    search_placeholder: "Search…",
+    table_head_level: "Level",
+    table_head_date: "Exam Date",
+    table_head_time: "Time",
+    table_head_deadline: "Registration Deadline",
+    table_head_spots: "Spots",
+    table_head_price: "Price",
+    table_head_status: "Status",
+    table_head_action: "Action",
+    table_no_results: "No exam dates found for this filter.",
+
+    // Service & Info
+    service_eyebrow: "Help & Support",
+    service_title: "Service & Information",
+    service_card1_title: "What is telc?",
+    service_card1_desc: "telc is one of the leading language exam providers in Europe. Its certificates are globally recognized by employers and administrations.",
+    service_card2_title: "Frequently Asked Questions",
+    service_card2_desc: "Consult our FAQ section to quickly find answers regarding registration, diploma delivery, and pricing.",
+    service_card2_btn: "View FAQ",
+    service_card3_title: "Customer Service",
+    service_card3_desc: "Our administrative team remains available Monday to Friday (09:00 AM–04:00 PM) to answer all your questions.",
+    service_card3_btn: "Contact Us",
+
+    // Blog
+    blog_eyebrow: "Tips & News",
+    blog_title: "Learn German Easily",
+    blog_lead: "Useful methodological tips for your exams and improving your everyday German.",
+
+    // FAQ
+    faq_eyebrow: "Your Questions",
+    faq_title: "Frequently Asked Questions",
+
+    // Contact
+    contact_eyebrow: "Contact Us",
+    contact_title: "Get in Touch",
+    contact_lead: "Any questions about our exam dates or our center? Contact us at any time.",
+    contact_card_title: "Contact Details",
+    contact_label_phone: "Phone",
+    contact_label_email: "E-mail",
+    contact_label_whatsapp: "WhatsApp",
+    contact_label_address: "Address",
+    contact_address_val: "Casablanca, Morocco (Full address to be specified soon)",
+    contact_hours_title: "🕐 Opening Hours",
+    contact_hours_val: "Monday – Friday: 09:00 AM – 04:00 PM",
+    form_label_name: "Full Name *",
+    form_placeholder_name: "John Doe",
+    form_label_email: "E-mail *",
+    form_placeholder_email: "john@example.com",
+    form_label_phone: "Phone",
+    form_placeholder_phone: "+212 6XX XX XX XX",
+    form_label_subject: "Subject",
+    form_placeholder_subject: "Subject of your request",
+    form_label_message: "Message *",
+    form_placeholder_message: "Your message…",
+    form_btn_submit: "Send Message",
+
+    // Footer
+    footer_desc: "Elite German academy, specializing in training and official preparation for telc B1 and B2 certification exams.",
+    footer_col_nav: "Navigation",
+    footer_col_info: "Information",
+    footer_col_contact: "Contact",
+    footer_copyright: "© 2026 Sigma DI — All rights reserved. Legal notices in compliance with Moroccan law.",
+    footer_privacy: "Data Protection",
+    footer_terms: "Terms & Conditions",
+    footer_legal: "Legal Notice",
+
+    // Modals Inscription
+    modal_reg_title: "Register for the Exam",
+    modal_reg_subtitle: "Fill in the form to reserve your spot",
+    step_info: "Your Information",
+    step_confirm: "Confirmation",
+    form_label_firstname: "First Name *",
+    form_placeholder_firstname: "Mary",
+    form_label_lastname: "Last Name *",
+    form_placeholder_lastname: "Smith",
+    form_label_whatsapp: "WhatsApp",
+    form_placeholder_whatsapp: "+212 6XX XX XX XX",
+    form_label_nationality: "Nationality",
+    form_placeholder_nationality: "Moroccan, French…",
+    modal_reg_recap: "Summary:",
+    form_label_payment: "Payment Method *",
+    payment_cash: "On-site (cash)",
+    payment_transfer: "Bank transfer",
+    checkbox_terms: "I accept the general terms and the data privacy policy of Sigma DI.",
+    success_reg_title: "Registration saved!",
+    success_reg_desc: "Your registration has been successfully received. You will receive a confirmation by e-mail or WhatsApp within 24 hours with payment details.",
+    btn_back: "← Back",
+    btn_continue: "Continue →",
+    btn_confirm: "Confirm Registration",
+
+    // Modal Advice
+    modal_advice_title: "Book an Appointment",
+    modal_advice_subtitle: "Schedule a slot for a personalized advice consultation",
+    form_label_date: "Preferred Date",
+    form_label_time: "Preferred Time",
+    form_label_topic: "Consultation Topic",
+    topic_general: "General Information",
+    topic_b1: "telc B1 Exam",
+    topic_b2: "telc B2 Exam",
+    topic_prep: "Preparation Course",
+    success_advice_title: "Request Received!",
+    success_advice_desc: "Your appointment request has been recorded. Our team will contact you shortly to confirm.",
+    btn_cancel: "Cancel",
+    btn_confirm_advice: "Confirm Appointment"
+  },
+  de: {
+    // Navigation
+    nav_offres: "Unsere Angebote",
+    nav_examens: "telc Prüfungen",
+    nav_dates: "Termine",
+    nav_blog: "Blog",
+    nav_faq: "FAQ",
+    nav_contact: "Kontakt",
+    nav_cta: "Anmelden",
+
+    // Hero
+    hero_badge: "Offizielles telc Prüfungszentrum",
+    hero_title: "Deutsch lernen mit <em>Erfolg</em> & <em>telc</em> Prüfungen bestehen",
+    hero_desc: "Ihre Akademie für moderne Sprachschulungen, anerkannte Zertifikate und professionelle Prüfungsvorbereitung.",
+    hero_partner: "In Partnerschaft mit unserem Prüfungszentrum in Frankfurt — <span>digitale telc B1 & B2 Prüfungen</span>",
+    hero_btn_register: "Jetzt anmelden",
+    hero_btn_dates: "Termine ansehen",
+    hero_btn_advice: "Beratungstermin",
+    hero_stat_cert: "Zertifiziert",
+    hero_stat_success: "Erfolgsquote",
+    hero_stat_exp: "Jahre Erfahrung",
+    hero_cert_b1: "Offizielle Prüfung",
+    hero_cert_b2: "Offizielle Prüfung",
+
+    // Welcome
+    welcome_eyebrow: "Unsere Akademie",
+    welcome_title: "Willkommen in unserer Akademie",
+    welcome_p1: "Unsere Akademie begleitet Lernende auf ihrem gesamten Weg – vom ersten Deutschkurs bis zum Erhalt des telc-Zertifikats.",
+    welcome_p2: "Dank erfahrener Dozenten, moderner Unterrichtsmethoden und persönlicher Betreuung schaffen wir die ideale Lernumgebung für Ihren Erfolg.",
+    welcome_p3: "Ob für die Arbeit, das Studium, ein Visum oder die Einbürgerung – wir helfen Ihnen, Ihre Sprachziele sicher zu erreichen.",
+    welcome_tag_work: "💼 Arbeit",
+    welcome_tag_studies: "🎓 Studium",
+    welcome_tag_visa: "🛂 Visum",
+    welcome_tag_nat: "🏛️ Einbürgerung",
+
+    // Offers
+    offers_eyebrow: "Was wir anbieten",
+    offers_title: "Unsere Angebote",
+    offers_lead: "Moderne und zielgerichtete Lernprogramme zur Verwirklichung Ihrer Pläne.",
+    offers_card1_title: "telc Prüfungen",
+    offers_card1_desc: "Offizielle digitale telc Prüfungen mit anerkannten Zertifikaten auf den Niveaustufen B1 und B2 nach GER-Standard. Gültig für Visum, Beruf und Einbürgerung.",
+    offers_card2_badge: "Empfohlen",
+    offers_card2_title: "Prüfungsvorbereitung",
+    offers_card2_desc: "Zielgerichtete Vorbereitungskurse mit offiziellen Modelltests, realistischen Prüfungssimulationen und persönlichem Feedback unserer Fachdozenten.",
+    offers_card3_title: "Online-Kurse",
+    offers_card3_desc: "Flexibles und interaktives Lernen – lernen Sie Deutsch in Ihrem eigenen Tempo von zu Hause aus mit unseren Online-Kursen.",
+
+    // Why us
+    why_eyebrow: "Unsere Stärken",
+    why_title: "Warum unsere Akademie?",
+    why_lead: "Wir vereinen alle wichtigen Erfolgsfaktoren, um Ihnen schnelle und zertifizierte Fortschritte zu garantieren.",
+    why_item1: "Zertifizierte und erfahrene Dozenten",
+    why_item2: "Deutsche Leitung",
+    why_item3: "Akkreditiertes offizielles Prüfungszentrum",
+    why_item4: "Flexible Uhrzeiten",
+    why_item5: "Moderne Unterrichtsmaterialien",
+    why_item6: "Individuelle Betreuung",
+
+    // About us / Values
+    about_eyebrow: "Wer wir sind",
+    about_title: "Über uns",
+    about_lead: "Sigma Deutsch Institut steht für Bildungsqualität, moderne Sprachschulungen und persönliche Begleitung auf dem Weg zum Erfolg.",
+    value1_title: "Qualität",
+    value1_desc: "Professioneller Unterricht mit modernen Lehrmethoden, die auf akademischer Exzellenz basieren.",
+    value2_title: "Respekt",
+    value2_desc: "Eine offene und wertschätzende Lernumgebung, die den Austausch zwischen allen Kulturen fördert.",
+    value3_title: "Erfolg",
+    value3_desc: "Individuelle Betreuung, um jedem Lernenden neue berufliche und akademische Perspektiven zu eröffnen.",
+
+    // Exams B1/B2
+    exams_eyebrow: "Offizielles Zertifikat",
+    exams_title: "telc Sprachprüfungen",
+    exams_lead: "Wir bieten offizielle telc-Prüfungen auf den Niveaustufen B1 und B2 an. Die Zertifikate sind international anerkannt und werden für Beruf, Studium, Visum und Einbürgerung akzeptiert.",
+    exams_level_b1: "Niveau B1 — GER",
+    exams_level_b2: "Niveau B2 — GER",
+    exams_b1_desc: "Die telc B1-Prüfung bescheinigt selbstständige Sprachkenntnisse im Alltag und im Berufsleben.",
+    exams_b2_desc: "Die telc B2-Prüfung bestätigt fortgeschrittene Sprachkenntnisse und ein tieferes Verständnis.",
+    exams_b1_item1: "Leseverstehen",
+    exams_b1_item2: "Hörverstehen",
+    exams_b1_item3: "Schriftlicher Ausdruck",
+    exams_b1_item4: "Mündlicher Ausdruck",
+    exams_b2_item1: "Von Arbeitgebern anerkannt",
+    exams_b2_item2: "Zugang zu Ausbildungen und Hochschulen",
+    exams_b2_item3: "Wichtiges Zertifikat für die berufliche Karriere",
+    exams_b2_item4: "Gültig für Visum und Einbürgerung",
+    exams_btn_register_b1: "Für telc B1 anmelden",
+    exams_btn_register_b2: "Für telc B2 anmelden",
+
+    // Prep
+    prep_eyebrow: "Erfolgreiche Vorbereitung",
+    prep_title: "Maßgeschneiderte Vorbereitung",
+    prep_desc: "Unsere Kurse helfen Ihnen, sich gezielt und effektiv auf Ihre telc-Prüfung vorzubereiten. Mit unseren bewährten Methoden erreichen unsere Teilnehmer eine herausragende Erfolgsquote.",
+    prep_btn: "Programm anfragen",
+    prep_feat1_title: "Modelltests",
+    prep_feat1_sub: "Aktuelle offizielle Übungsprüfungen",
+    prep_feat2_title: "Simulationen",
+    prep_feat2_sub: "Reale Prüfungsbedingungen mit Zeitmessung",
+    prep_feat3_title: "Persönliches Feedback",
+    prep_feat3_sub: "Individuelle Korrekturen",
+    prep_feat4_title: "Strategien",
+    prep_feat4_sub: "Exklusive Erfolgsmethoden",
+
+    // Dates & Filter
+    dates_eyebrow: "Nächste Prüfungstermine",
+    dates_title: "Aktuelle Termine",
+    dates_lead: "Hier finden Sie alle anstehenden telc-Prüfungstermine unserer Akademie. Die Zahlung erfolgt offline (bar vor Ort oder per Banküberweisung nach Bestätigung).",
+    filter_all: "Alle Prüfungen",
+    filter_b1: "telc B1",
+    filter_b2: "telc B2",
+    filter_modules: "Module",
+    search_placeholder: "Suchen…",
+    table_head_level: "Niveau",
+    table_head_date: "Prüfungsdatum",
+    table_head_time: "Uhrzeit",
+    table_head_deadline: "Anmeldefrist",
+    table_head_spots: "Plätze",
+    table_head_price: "Preis",
+    table_head_status: "Status",
+    table_head_action: "Aktion",
+    table_no_results: "Keine Prüfungstermine für diesen Filter gefunden.",
+
+    // Service & Info
+    service_eyebrow: "Hilfe & Support",
+    service_title: "Service & Informationen",
+    service_card1_title: "Was ist telc?",
+    service_card1_desc: "telc ist einer der führenden europäischen Anbieter für Sprachprüfungen. Die Zertifikate sind weltweit bei Arbeitgebern und Behörden anerkannt.",
+    service_card2_title: "Häufig gestellte Fragen",
+    service_card2_desc: "Lesen Sie unsere FAQ, um schnell Antworten zu Anmeldung, Zeugnisvergabe und Preisen zu erhalten.",
+    service_card2_btn: "FAQ ansehen",
+    service_card3_title: "Kundenservice",
+    service_card3_desc: "Unser Verwaltungsteam steht Ihnen von Montag bis Freitag (09:00 – 16:00 Uhr) zur Verfügung, um Ihre Fragen zu beantworten.",
+    service_card3_btn: "Kontaktieren Sie uns",
+
+    // Blog
+    blog_eyebrow: "Tipps & Aktuelles",
+    blog_title: "Einfach Deutsch lernen",
+    blog_lead: "Nützliche methodische Tipps für Ihre Prüfungen und zur Verbesserung Ihres täglichen Deutschs.",
+
+    // FAQ
+    faq_eyebrow: "Ihre Fragen",
+    faq_title: "Häufig gestellte Fragen",
+
+    // Contact
+    contact_eyebrow: "Kontaktieren Sie uns",
+    contact_title: "Kontakt",
+    contact_lead: "Haben Sie Fragen zu unseren Terminen oder unserem Zentrum? Kontaktieren Sie uns jederzeit.",
+    contact_card_title: "Kontaktdaten",
+    contact_label_phone: "Telefon",
+    contact_label_email: "E-Mail",
+    contact_label_whatsapp: "WhatsApp",
+    contact_label_address: "Adresse",
+    contact_address_val: "Casablanca, Marokko (Genaue Adresse wird in Kürze bekannt gegeben)",
+    contact_hours_title: "🕐 Öffnungszeiten",
+    contact_hours_val: "Montag – Freitag: 09:00 – 16:00 Uhr",
+    form_label_name: "Vollständiger Name *",
+    form_placeholder_name: "Max Mustermann",
+    form_label_email: "E-Mail *",
+    form_placeholder_email: "max@example.de",
+    form_label_phone: "Telefon",
+    form_placeholder_phone: "+212 6XX XX XX XX",
+    form_label_subject: "Betreff",
+    form_placeholder_subject: "Betreff Ihrer Anfrage",
+    form_label_message: "Nachricht *",
+    form_placeholder_message: "Ihre Nachricht…",
+    form_btn_submit: "Nachricht senden",
+
+    // Footer
+    footer_desc: "Elite-Deutschakademie, spezialisiert auf das Training und die offizielle Vorbereitung auf die telc-Zertifizierungsprüfungen B1 und B2.",
+    footer_col_nav: "Navigation",
+    footer_col_info: "Informationen",
+    footer_col_contact: "Kontakt",
+    footer_copyright: "© 2026 Sigma DI — Alle Rechte vorbehalten. Rechtliche Hinweise gemäß marokkanischem Recht.",
+    footer_privacy: "Datenschutz",
+    footer_terms: "AGB",
+    footer_legal: "Impressum",
+
+    // Modals Inscription
+    modal_reg_title: "Für Prüfung anmelden",
+    modal_reg_subtitle: "Füllen Sie das Formular aus, um Ihren Platz zu sichern",
+    step_info: "Ihre Informationen",
+    step_confirm: "Bestätigung",
+    form_label_firstname: "Vorname *",
+    form_placeholder_firstname: "Marie",
+    form_label_lastname: "Nachname *",
+    form_placeholder_lastname: "Mustermann",
+    form_label_whatsapp: "WhatsApp",
+    form_placeholder_whatsapp: "+212 6XX XX XX XX",
+    form_label_nationality: "Nationalität",
+    form_placeholder_nationality: "Marokkanisch, Französisch…",
+    modal_reg_recap: "Zusammenfassung:",
+    form_label_payment: "Zahlungsmethode *",
+    payment_cash: "Vor Ort (bar)",
+    payment_transfer: "Banküberweisung",
+    checkbox_terms: "Ich akzeptiere die AGB und die Datenschutzerklärung von Sigma DI.",
+    success_reg_title: "Anmeldung registriert!",
+    success_reg_desc: "Ihre Anmeldung wurde erfolgreich empfangen. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail oder WhatsApp mit den Zahlungsinformationen.",
+    btn_back: "← Zurück",
+    btn_continue: "Weiter →",
+    btn_confirm: "Anmeldung bestätigen",
+
+    // Modal Advice
+    modal_advice_title: "Termin buchen",
+    modal_advice_subtitle: "Buchen Sie einen Termin für eine persönliche Beratung",
+    form_label_date: "Wunschdatum",
+    form_label_time: "Wunschzeit",
+    form_label_topic: "Beratungsthema",
+    topic_general: "Allgemeine Informationen",
+    topic_b1: "telc B1 Prüfung",
+    topic_b2: "telc B2 Prüfung",
+    topic_prep: "Vorbereitungskurs",
+    success_advice_title: "Anfrage erhalten!",
+    success_advice_desc: "Ihre Terminanfrage wurde registriert. Unser Team wird Sie in Kürze kontaktieren, um den Termin zu bestätigen.",
+    btn_cancel: "Abbrechen",
+    btn_confirm_advice: "Termin bestätigen"
+  }
+};
+
+// State
+let currentLang = localStorage.getItem('sigma-di-lang') || 'fr';
+
+function initI18n() {
+  applyLanguage(currentLang);
+}
+
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('sigma-di-lang', lang);
+  applyLanguage(lang);
+  
+  // Dispatch custom event to let app.js reload Supabase resources matching language
+  const event = new CustomEvent('languageChanged', { detail: { language: lang } });
+  document.dispatchEvent(event);
+}
+
+function applyLanguage(lang) {
+  // Set html lang attribute
+  document.documentElement.setAttribute('lang', lang);
+  
+  // Translate standard data-i18n text
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const translation = getTranslation(lang, key);
+    if (translation) {
+      el.innerHTML = translation;
+    }
+  });
+
+  // Translate placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const translation = getTranslation(lang, key);
+    if (translation) {
+      el.setAttribute('placeholder', translation);
+    }
+  });
+
+  // Update language selector active states in UI
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const active = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', active);
+  });
+}
+
+function getTranslation(lang, key) {
+  return translations[lang] ? translations[lang][key] : null;
+}
+
+// Global exposure
+window.i18n = {
+  init: initI18n,
+  setLanguage: setLanguage,
+  getCurrentLanguage: () => currentLang
+};

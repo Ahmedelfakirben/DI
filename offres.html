@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="nav_offres">Nos offres — Sigma DI</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" aria-label="Navigation principale">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" id="logo-link">
+      <img src="logo.png" alt="Sigma Deutsch Institut Logo" />
+      <div class="navbar__logo-text">
+        <span class="navbar__logo-name">Sigma DI</span>
+        <span class="navbar__logo-sub">Sprache · Bildung · Zukunft</span>
+      </div>
+    </a>
+
+    <ul class="navbar__nav" role="list">
+      <li><a href="offres.html"    class="navbar__link active" data-i18n="nav_offres">Nos offres</a></li>
+      <li><a href="examens.html"   class="navbar__link" data-i18n="nav_examens">Examens telc</a></li>
+      <li><a href="dates.html"     class="navbar__link" data-i18n="nav_dates">Dates</a></li>
+      <li><a href="blog.html"      class="navbar__link" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="faq.html"       class="navbar__link" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="contact.html"   class="navbar__link" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <div class="navbar__actions">
+      <!-- Language Selector -->
+      <div class="lang-selector">
+        <button class="lang-btn" data-lang="fr" onclick="i18n.setLanguage('fr')">FR</button>
+        <button class="lang-btn" data-lang="en" onclick="i18n.setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="de" onclick="i18n.setLanguage('de')">DE</button>
+      </div>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème">
+        <svg id="icon-sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="dates.html" class="btn btn-gold btn-sm" data-i18n="nav_cta">S'inscrire</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
+  <div class="lang-selector" style="justify-content: center; margin-bottom: 1rem;">
+    <button class="lang-btn" data-lang="fr" onclick="i18n.setLanguage('fr')">FR</button>
+    <button class="lang-btn" data-lang="en" onclick="i18n.setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="de" onclick="i18n.setLanguage('de')">DE</button>
+  </div>
+  <a href="offres.html"  class="mobile-nav__link active" data-i18n="nav_offres">Nos offres</a>
+  <a href="examens.html" class="mobile-nav__link" data-i18n="nav_examens">Examens telc</a>
+  <a href="dates.html"   class="mobile-nav__link" data-i18n="nav_dates">Dates d'examen</a>
+  <a href="blog.html"    class="mobile-nav__link" data-i18n="nav_blog">Blog</a>
+  <a href="faq.html"     class="mobile-nav__link" data-i18n="nav_faq">FAQ</a>
+  <a href="contact.html" class="mobile-nav__link" data-i18n="nav_contact">Contact</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main style="padding-top: var(--nav-h);">
+  <!-- Header Page -->
+  <section class="section section--gold" style="padding: var(--s16) 0; text-align: center;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="welcome_eyebrow" style="justify-content: center;">Notre académie</div>
+      <h1 class="section-title" data-i18n="offers_title" style="margin-bottom: 0;">Nos offres</h1>
+      <p class="section-lead" data-i18n="offers_lead" style="margin: var(--s4) auto 0;">Des programmes d'apprentissage modernes et ciblés pour concrétiser vos projets.</p>
+    </div>
+  </section>
+
+  <!-- Detailed Offers -->
+  <section class="section">
+    <div class="container">
+      <div class="offers-grid">
+        <div class="offer-card" data-animate>
+          <div class="offer-card__icon-wrap">🏅</div>
+          <h3 class="offer-card__title" data-i18n="offers_card1_title">Examens telc</h3>
+          <p class="offer-card__desc" data-i18n="offers_card1_desc">Examens officiels telc numériques avec certificats reconnus aux niveaux B1 et B2 selon les normes du CECR. Valables pour les visas, l'emploi et la naturalisation.</p>
+          <a href="examens.html" class="btn btn-navy btn-sm" style="margin-top: var(--s6);" data-i18n="hero_btn_dates">Voir les dates</a>
+        </div>
+        
+        <div class="offer-card offer-card--featured" data-animate>
+          <div class="offer-card__badge" data-i18n="offers_card2_badge">Recommandé</div>
+          <div class="offer-card__icon-wrap">📚</div>
+          <h3 class="offer-card__title" data-i18n="offers_card2_title">Préparation aux examens</h3>
+          <p class="offer-card__desc" data-i18n="offers_card2_desc">Cours de préparation ciblés avec tests modèles officiels, simulations réalistes d'examen et feedback personnalisé par nos enseignants experts.</p>
+          <a href="contact.html" class="btn btn-gold btn-sm" style="margin-top: var(--s6);" data-i18n="prep_btn">Demander un programme</a>
+        </div>
+
+        <div class="offer-card" data-animate>
+          <div class="offer-card__icon-wrap">💻</div>
+          <h3 class="offer-card__title" data-i18n="offers_card3_title">Cours en ligne</h3>
+          <p class="offer-card__desc" data-i18n="offers_card3_desc">Apprentissage flexible et interactif – apprenez l'allemand à votre rythme depuis chez vous grâce à nos modules de cours à distance.</p>
+          <button class="btn btn-navy btn-sm" onclick="openConsultationModal()" style="margin-top: var(--s6);" data-i18n="hero_btn_advice">Rendez-vous conseil</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">
+          <img src="logo.png" alt="Sigma Deutsch Institut Logo" style="height:52px;" />
+        </div>
+        <p class="footer__desc" data-i18n="footer_desc">
+          Académie d'allemand d'élite, spécialisée dans la formation et la préparation officielle aux examens de certification telc B1 et B2.
+        </p>
+      </div>
+      <div>
+        <div class="footer__col-title" data-i18n="footer_col_nav">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="offres.html"   class="footer__link" data-i18n="nav_offres">Nos offres</a></li>
+          <li><a href="examens.html"  class="footer__link" data-i18n="nav_examens">Examens telc</a></li>
+          <li><a href="dates.html"    class="footer__link" data-i18n="nav_dates">Dates</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-i18n="footer_col_info">Informations</div>
+        <ul class="footer__links">
+          <li><a href="blog.html"    class="footer__link" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="faq.html"     class="footer__link" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" class="footer__link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title" data-i18n="footer_col_contact">Contact</div>
+        <ul class="footer__links">
+          <li><span class="footer__link">📞 +212 5XX XX XX XX</span></li>
+          <li><span class="footer__link">✉️ contact@sigmadi.com</span></li>
+          <li><span class="footer__link">🕐 Lun–Ven : 09h–16h</span></li>
+          <li><span class="footer__slogan">Sprache · Bildung · Zukunft</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div data-i18n="footer_copyright">© 2026 Sigma DI — Tous droits réservés. Mentions légales conformes au droit marocain.</div>
+      <div class="footer__legal">
+        <a href="#" id="link-privacy" data-i18n="footer_privacy">Protection des données</a>
+        <a href="#" id="link-terms" data-i18n="footer_terms">Conditions générales</a>
+        <a href="#" id="link-legal" data-i18n="footer_legal">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL — CONSULTATION -->
+<div class="modal-overlay" id="modal-consultation" role="dialog" aria-modal="true" aria-labelledby="modal-cons-title">
+  <div class="modal">
+    <div class="modal__header">
+      <div>
+        <div class="modal__title" id="modal-cons-title" data-i18n="modal_advice_title">Prendre un rendez-vous</div>
+        <div class="modal__subtitle" id="modal-cons-subtitle" data-i18n="modal_advice_subtitle">Réservez un créneau de conseil personnalisé</div>
+      </div>
+      <button class="modal__close" onclick="closeModal('modal-consultation')" aria-label="Fermer">×</button>
+    </div>
+    <div class="modal__body">
+      <form class="form" id="cons-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="cons-firstname" data-i18n="form_label_firstname">Prénom *</label>
+            <input class="form-input" type="text" id="cons-firstname" data-i18n-placeholder="form_placeholder_firstname" placeholder="Marie" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cons-lastname" data-i18n="form_label_lastname">Nom *</label>
+            <input class="form-input" type="text" id="cons-lastname" data-i18n-placeholder="form_placeholder_lastname" placeholder="Dupont" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="cons-email" data-i18n="form_label_email">E-mail *</label>
+            <input class="form-input" type="email" id="cons-email" data-i18n-placeholder="form_placeholder_email" placeholder="marie@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cons-phone" data-i18n="form_label_phone">Téléphone *</label>
+            <input class="form-input" type="tel" id="cons-phone" data-i18n-placeholder="form_placeholder_phone" placeholder="+212 6XX XX XX XX" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="cons-date" data-i18n="form_label_date">Date souhaitée</label>
+            <input class="form-input" type="date" id="cons-date" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cons-time" data-i18n="form_label_time">Heure souhaitée</label>
+            <select class="form-select" id="cons-time">
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cons-topic" data-i18n="form_label_topic">Sujet de consultation</label>
+          <select class="form-select" id="cons-topic">
+            <option value="general" data-i18n="topic_general">Information générale</option>
+            <option value="telc_b1" data-i18n="topic_b1">Examen telc B1</option>
+            <option value="telc_b2" data-i18n="topic_b2">Examen telc B2</option>
+            <option value="prep_course" data-i18n="topic_prep">Cours de préparation</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="success-state" id="cons-success">
+        <div class="success-checkmark">✓</div>
+        <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:800; margin-bottom:0.75rem; color:var(--text);" data-i18n="success_advice_title">Demande reçue !</h3>
+        <p style="color:var(--text-soft); font-size:0.875rem; line-height:1.7;" data-i18n="success_advice_desc">
+          Votre demande de rendez-vous a bien été enregistrée. Notre équipe vous contactera rapidement pour confirmer le créneau.
+        </p>
+      </div>
+    </div>
+    <div class="modal__footer" id="cons-footer">
+      <button class="btn btn-outline-navy" onclick="closeModal('modal-consultation')" data-i18n="btn_cancel">Annuler</button>
+      <button class="btn btn-gold" id="btn-cons-submit" onclick="submitConsultation()" data-i18n="btn_confirm_advice">Confirmer le rendez-vous</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/212600000000" class="wa-fab" id="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp">
+  💬
+</a>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="i18n.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
