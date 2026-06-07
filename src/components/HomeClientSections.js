@@ -65,9 +65,18 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
   return (
     <>
       {/* ── Exam Dates Preview — Navy mid ───────────────────── */}
-      <section className="py-24 section-navy-mid text-white relative overflow-hidden">
-        <ParallaxOrb color="gold" speed={0.15} size="w-[350px] h-[350px]" top="20%" right="-10%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
-        <ParallaxOrb color="navy" speed={0.1} size="w-[400px] h-[400px]" top="40%" left="-10%" animationClass="animate-orb-3" opacity="opacity-[0.12]" />
+      <section 
+        className="py-24 text-white relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/hero_dates.png')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        
+        {/* Glow Spheres */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <ParallaxOrb color="gold" speed={0.15} size="w-[350px] h-[350px]" top="20%" right="-10%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
+          <ParallaxOrb color="navy" speed={0.1} size="w-[400px] h-[400px]" top="40%" left="-10%" animationClass="animate-orb-3" opacity="opacity-[0.12]" />
+        </div>
         
         {/* Bottom gold separator */}
         <div className="absolute bottom-0 left-0 right-0 gold-separator z-10" />
@@ -252,9 +261,18 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
       </section>
 
       {/* ── Blog Grid Preview — Navy deep ──────────────────── */}
-      <section className="py-24 section-navy-deep text-white relative overflow-hidden">
-        <ParallaxOrb color="navy" speed={0.12} size="w-[380px] h-[380px]" top="15%" left="-10%" animationClass="animate-orb-2" opacity="opacity-[0.15]" />
-        <ParallaxOrb color="red" speed={0.18} size="w-[300px] h-[300px]" top="50%" right="-5%" animationClass="animate-orb-1" opacity="opacity-[0.12]" />
+      <section 
+        className="py-24 text-white relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/hero_blog.png')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        
+        {/* Glow Spheres */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <ParallaxOrb color="navy" speed={0.12} size="w-[380px] h-[380px]" top="15%" left="-10%" animationClass="animate-orb-2" opacity="opacity-[0.15]" />
+          <ParallaxOrb color="red" speed={0.18} size="w-[300px] h-[300px]" top="50%" right="-5%" animationClass="animate-orb-1" opacity="opacity-[0.12]" />
+        </div>
         
         {/* Bottom gold separator */}
         <div className="absolute bottom-0 left-0 right-0 gold-separator z-10" />
@@ -334,9 +352,18 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
       </section>
 
       {/* ── FAQ Accordion Section — Navy mid ────────────────── */}
-      <section className="py-24 section-navy-mid text-white relative overflow-hidden">
-        <ParallaxOrb color="warmGold" speed={0.14} size="w-[320px] h-[320px]" top="30%" left="-10%" animationClass="animate-orb-3" opacity="opacity-[0.18]" />
-        <ParallaxOrb color="navy" speed={0.2} size="w-[450px] h-[450px]" top="10%" right="-15%" animationClass="animate-orb-1" opacity="opacity-[0.12]" />
+      <section 
+        className="py-24 text-white relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/hero_faq.png')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        
+        {/* Glow Spheres */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <ParallaxOrb color="warmGold" speed={0.14} size="w-[320px] h-[320px]" top="30%" left="-10%" animationClass="animate-orb-3" opacity="opacity-[0.18]" />
+          <ParallaxOrb color="navy" speed={0.2} size="w-[450px] h-[450px]" top="10%" right="-15%" animationClass="animate-orb-1" opacity="opacity-[0.12]" />
+        </div>
         
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center flex flex-col items-center gap-3.5 mb-16">

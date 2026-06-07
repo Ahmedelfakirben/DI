@@ -427,9 +427,18 @@ export default async function HomePage({ params }) {
       {/* ══════════════════════════════════════════════════════
           OFFERS SECTION — Navy mid
       ══════════════════════════════════════════════════════ */}
-      <section className="py-24 section-navy-mid text-white relative overflow-hidden">
-        <ParallaxOrb color="navy" speed={0.1} size="w-[400px] h-[400px]" top="20%" left="5%" animationClass="animate-orb-3" opacity="opacity-[0.15]" />
-        <ParallaxOrb color="warmGold" speed={0.15} size="w-[300px] h-[300px]" top="60%" right="5%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
+      <section 
+        className="py-24 text-white relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/assets/hero_offres.png')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        
+        {/* Glow Spheres */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <ParallaxOrb color="navy" speed={0.1} size="w-[400px] h-[400px]" top="20%" left="5%" animationClass="animate-orb-3" opacity="opacity-[0.15]" />
+          <ParallaxOrb color="warmGold" speed={0.15} size="w-[300px] h-[300px]" top="60%" right="5%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
+        </div>
         
         {/* Bottom gold separator */}
         <div className="absolute bottom-0 left-0 right-0 gold-separator z-10" />
