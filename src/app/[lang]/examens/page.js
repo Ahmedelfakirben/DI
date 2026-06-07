@@ -16,11 +16,11 @@ export default function ExamensPage({ params: paramsPromise }) {
   return (
     <div className="bg-bg text-white">
       {/* Hero Header with background image */}
-      <section className="relative overflow-hidden py-20 md:py-28 text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero_examens.png')" }}>
+      <section className="relative overflow-hidden pt-32 pb-44 md:pt-40 md:pb-56 text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero_examens.png')" }}>
         <div className="absolute inset-0 bg-gradient-to-b from-gold-400/20 via-navy-950/65 to-navy-950/85 pointer-events-none" />
         <ParallaxOrb color="gold" speed={0.12} size="w-[350px] h-[350px]" top="20%" right="10%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
         <ParallaxOrb color="red" speed={0.08} size="w-[250px] h-[250px]" top="40%" left="5%" animationClass="animate-orb-2" opacity="opacity-[0.12]" />
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0c1633] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-bg to-transparent pointer-events-none z-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <span className="text-xs font-bold text-gold-400 uppercase tracking-widest flex items-center justify-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-gold-400" />
@@ -32,7 +32,7 @@ export default function ExamensPage({ params: paramsPromise }) {
       </section>
 
       {/* Tabs and Details - Full width background section with inner max-w container */}
-      <section className="py-20 section-navy-mid">
+      <section className="pb-24 section-navy-mid relative z-20 -mt-16 md:-mt-24">
         <div className="max-w-5xl mx-auto px-6">
           {/* Tab Buttons */}
           <div className="flex justify-center gap-4 mb-12">

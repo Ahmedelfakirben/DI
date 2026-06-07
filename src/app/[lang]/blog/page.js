@@ -55,10 +55,10 @@ export default async function BlogPage({ params }) {
   return (
     <div className="bg-bg text-white">
       {/* Hero Header with background image */}
-      <section className="relative overflow-hidden py-20 md:py-28 text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero_blog.png')" }}>
+      <section className="relative overflow-hidden pt-32 pb-44 md:pt-40 md:pb-56 text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero_blog.png')" }}>
         <div className="absolute inset-0 bg-gradient-to-b from-gold-400/20 via-navy-950/65 to-navy-950/85 pointer-events-none" />
         <ParallaxOrb color="warmGold" speed={0.1} size="w-[300px] h-[300px]" top="30%" right="15%" animationClass="animate-orb-3" opacity="opacity-[0.15]" />
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-bg to-transparent pointer-events-none z-10" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <span className="text-xs font-bold text-gold-400 uppercase tracking-widest flex items-center justify-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-gold-400" />
@@ -70,7 +70,7 @@ export default async function BlogPage({ params }) {
       </section>
 
       {/* Blog Cards Grid */}
-      <section className="py-20 section-navy-deep">
+      <section className="pb-24 section-navy-deep relative z-20 -mt-16 md:-mt-24">
         <div className="max-w-7xl mx-auto px-6">
         {posts.length === 0 ? (
           <div className="text-center py-16 card-navy-glass border border-gold-400/10 rounded-3xl text-navy-200">
