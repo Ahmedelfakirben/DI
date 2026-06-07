@@ -70,7 +70,11 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         style={{ backgroundImage: "url('/assets/hero_dates.png')" }}
       >
         {/* Warm overlay with gold tint for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 via-navy-950/65 to-navy-950/85 pointer-events-none z-0" />
+        
+        {/* Top and Bottom smooth fade transitions */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -170,7 +174,6 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
                             <th className="py-3.5 px-3 md:px-4">{t('table_head_deadline')}</th>
                             <th className="py-3.5 px-3 md:px-4">{t('table_head_spots')}</th>
                             <th className="py-3.5 px-3 md:px-4">{t('table_head_price')}</th>
-                            <th className="py-3.5 px-3 md:px-4">{t('table_head_status')}</th>
                             <th className="py-3.5 px-3 md:px-4 text-right">{t('table_head_action')}</th>
                           </tr>
                         </thead>
@@ -218,11 +221,6 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
                                   </span>
                                 </td>
                                 <td className="py-3.5 px-3 md:px-4 font-extrabold text-white whitespace-nowrap">{exam.price_eur} DH</td>
-                                <td className="py-3.5 px-3 md:px-4">
-                                  <span className={`inline-block text-[9px] md:text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 md:px-2.5 md:py-1 rounded-full whitespace-nowrap ${statusClass}`}>
-                                    ● {statusText}
-                                  </span>
-                                </td>
                                 <td className="py-3.5 px-3 md:px-4 text-right">
                                   <Link
                                     href={`?register=${exam.id}`}
@@ -266,7 +264,11 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         style={{ backgroundImage: "url('/assets/hero_blog.png')" }}
       >
         {/* Warm overlay with gold tint for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 via-navy-950/65 to-navy-950/85 pointer-events-none z-0" />
+        
+        {/* Top and Bottom smooth fade transitions */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -357,7 +359,11 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         style={{ backgroundImage: "url('/assets/hero_faq.png')" }}
       >
         {/* Warm overlay with gold tint for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 via-navy-950/65 to-navy-950/85 pointer-events-none z-0" />
+        
+        {/* Top and Bottom smooth fade transitions */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060d1f] to-transparent pointer-events-none z-10" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

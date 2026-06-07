@@ -233,7 +233,7 @@ function getHtmlEmailTemplate(regData, exam, langCopy, lang) {
       <body>
         <div class="container">
           <div class="header">
-            <img src="cid:logo" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
+            <img src="cid:logo_white" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="body">
             <h2>${langCopy.title}</h2>
@@ -396,12 +396,20 @@ export async function registerStudentAction(formData, lang) {
     if (transporter) {
       const emailHtml = getHtmlEmailTemplate(insertedRegistration, examDetails, copy, lang);
       const logoPath = path.join(process.cwd(), 'public', 'logo.svg');
+      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_white.svg');
       const attachments = [];
       if (fs.existsSync(logoPath)) {
         attachments.push({
           filename: 'logo.svg',
           path: logoPath,
           cid: 'logo'
+        });
+      }
+      if (fs.existsSync(logoWhitePath)) {
+        attachments.push({
+          filename: 'logo_white.svg',
+          path: logoWhitePath,
+          cid: 'logo_white'
         });
       }
       
@@ -547,7 +555,7 @@ function getPaymentConfirmedHtmlTemplate(regData, exam, langCopy, lang) {
       <body>
         <div class="container">
           <div class="header">
-            <img src="cid:logo" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
+            <img src="cid:logo_white" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="body">
             <h2>${langCopy.payment_title}</h2>
@@ -631,12 +639,20 @@ export async function sendPaymentConfirmationEmailAction(reg, exam, lang = 'fr')
     if (transporter) {
       const emailHtml = getPaymentConfirmedHtmlTemplate(reg, exam, copy, lang);
       const logoPath = path.join(process.cwd(), 'public', 'logo.svg');
+      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_white.svg');
       const attachments = [];
       if (fs.existsSync(logoPath)) {
         attachments.push({
           filename: 'logo.svg',
           path: logoPath,
           cid: 'logo'
+        });
+      }
+      if (fs.existsSync(logoWhitePath)) {
+        attachments.push({
+          filename: 'logo_white.svg',
+          path: logoWhitePath,
+          cid: 'logo_white'
         });
       }
       

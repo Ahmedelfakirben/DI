@@ -11,11 +11,12 @@ export default function PageLoader() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const prevPathRef = useRef(pathname);
 
-  // Initial load effect
   useEffect(() => {
     // Show first load animation for 1.6 seconds
     const timer = setTimeout(() => {
       setIsFirstLoad(false);
+      document.documentElement.classList.add('page-loaded');
+      window.dispatchEvent(new Event('page-loader-finished'));
     }, 1600);
     return () => clearTimeout(timer);
   }, []);

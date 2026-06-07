@@ -432,7 +432,11 @@ export default async function HomePage({ params }) {
         style={{ backgroundImage: "url('/assets/hero_offres.png')" }}
       >
         {/* Warm overlay with gold tint for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/10 via-navy-950/65 to-navy-950/85 pointer-events-none z-0" />
+        
+        {/* Top and Bottom smooth fade transitions */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0c1633] to-transparent pointer-events-none z-10" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
