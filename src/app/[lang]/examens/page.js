@@ -14,26 +14,35 @@ export default function ExamensPage({ params: paramsPromise }) {
   const [activeTab, setActiveTab] = useState('b1');
 
   return (
-    <div className="bg-bg text-white">
-      {/* Hero Header with background image */}
-      <section className="relative overflow-hidden pt-32 pb-44 md:pt-40 md:pb-56 text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero_examens.png')" }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-400/20 via-navy-950/65 to-navy-950/85 pointer-events-none" />
+    <div className="relative min-h-screen bg-bg text-white overflow-hidden">
+      {/* Full-page Background Image and Overlays */}
+      <div 
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat pointer-events-none z-0" 
+        style={{ backgroundImage: "url('/assets/hero_examens.png')" }} 
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/75 to-bg pointer-events-none z-0" />
+      
+      {/* Orbs wrapper */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <ParallaxOrb color="gold" speed={0.12} size="w-[350px] h-[350px]" top="20%" right="10%" animationClass="animate-orb-1" opacity="opacity-[0.18]" />
         <ParallaxOrb color="red" speed={0.08} size="w-[250px] h-[250px]" top="40%" left="5%" animationClass="animate-orb-2" opacity="opacity-[0.12]" />
-        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-bg to-transparent pointer-events-none z-10" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      </div>
+
+      {/* Page Content */}
+      <div className="relative z-10">
+        {/* Header Hero */}
+        <header className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 text-center">
           <span className="text-xs font-bold text-gold-400 uppercase tracking-widest flex items-center justify-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-gold-400" />
             {t('exams_eyebrow')}
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold font-display leading-tight text-white">{t('exams_title')}</h1>
           <p className="text-navy-200 max-w-xl leading-relaxed text-sm md:text-base mt-4 mx-auto">{t('exams_lead')}</p>
-        </div>
-      </section>
+        </header>
 
-      {/* Tabs and Details - Full width background section with inner max-w container */}
-      <section className="pb-24 section-navy-mid relative z-20 -mt-16 md:-mt-24">
-        <div className="max-w-5xl mx-auto px-6">
+        {/* Tabs and Details */}
+        <main className="pb-24">
+          <div className="max-w-5xl mx-auto px-6">
           {/* Tab Buttons */}
           <div className="flex justify-center gap-4 mb-12">
             {['b1', 'b2'].map((lvl) => (
@@ -156,7 +165,8 @@ export default function ExamensPage({ params: paramsPromise }) {
             </AnimatePresence>
           </div>
         </div>
-      </section>
+      </main>
     </div>
+  </div>
   );
 }
