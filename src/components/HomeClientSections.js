@@ -69,8 +69,8 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         className="py-24 text-white relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/hero_dates.png')" }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        {/* Warm overlay with gold tint for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -265,8 +265,8 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         className="py-24 text-white relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/hero_blog.png')" }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        {/* Warm overlay with gold tint for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -356,8 +356,8 @@ export default function HomeClientSections({ lang, exams, blogPosts, faqs }) {
         className="py-24 text-white relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/hero_faq.png')" }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        {/* Warm overlay with gold tint for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

@@ -233,8 +233,7 @@ function getHtmlEmailTemplate(regData, exam, langCopy, lang) {
       <body>
         <div class="container">
           <div class="header">
-            <div class="logo">Sigma DI</div>
-            <span class="logo-sub">Deutsch Institut</span>
+            <img src="cid:logo" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="body">
             <h2>${langCopy.title}</h2>
@@ -548,8 +547,7 @@ function getPaymentConfirmedHtmlTemplate(regData, exam, langCopy, lang) {
       <body>
         <div class="container">
           <div class="header">
-            <div class="logo">Sigma DI</div>
-            <span class="logo-sub">Deutsch Institut</span>
+            <img src="cid:logo" alt="Sigma DI Logo" style="height: 55px; width: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="body">
             <h2>${langCopy.payment_title}</h2>

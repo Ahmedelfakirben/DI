@@ -516,10 +516,23 @@ export default function AdminDashboard({ params }) {
   const totalAvailable = exams.reduce((acc, e) => acc + e.available_spots, 0);
   const fillRate = totalCapacity > 0 ? Math.round(((totalCapacity - totalAvailable) / totalCapacity) * 100) : 0;
 
+  const lightThemeStyle = {
+    '--bg': '#f4f6fb',
+    '--bg-alt': '#ffffff',
+    '--bg-card': '#ffffff',
+    '--bg-muted': '#eef2f6',
+    '--border': 'rgba(13, 27, 62, 0.08)',
+    '--text': '#060d1f',
+    '--text-soft': '#374151',
+    '--text-muted': '#6b7280',
+    color: 'var(--text)',
+    backgroundColor: 'var(--bg)'
+  };
+
   // Unauthenticated Login View
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-navy-950 flex flex-col justify-center items-center px-6 py-12 relative overflow-hidden bg-grid-pattern text-white">
+      <div className="min-h-screen bg-bg flex flex-col justify-center items-center px-6 py-12 relative overflow-hidden bg-grid-pattern text-text" style={lightThemeStyle}>
         {/* Glow Spheres */}
         <div className="absolute top-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-gold-400/5 blur-[90px] pointer-events-none" />
         <div className="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-navy-500/5 blur-[80px] pointer-events-none" />
@@ -527,48 +540,48 @@ export default function AdminDashboard({ params }) {
         <div className="w-full max-w-md relative z-10">
           {/* Logo */}
           <div className="flex flex-col items-center gap-2 mb-8 text-center">
-            <div className="text-4xl font-extrabold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white to-gold-300 font-display">SIGMA DI</div>
-            <span className="text-[10px] text-gold-400 tracking-[0.3em] font-bold uppercase">{t.admin_portal}</span>
+            <div className="text-4xl font-extrabold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-navy-950 to-gold-500 font-display">SIGMA DI</div>
+            <span className="text-[10px] text-gold-600 tracking-[0.3em] font-bold uppercase">{t.admin_portal}</span>
           </div>
 
           {/* Login Card */}
-          <div className="premium-glass-card rounded-[32px] p-8 border border-white/10 shadow-2xl relative">
+          <div className="bg-bg-card rounded-[32px] p-8 border border-border shadow-2xl relative">
             <div className="absolute top-0 left-0 right-0">
               <div className="german-flag-accent w-full" />
             </div>
 
             <div className="flex flex-col gap-1 mb-6 text-center mt-3">
-              <h2 className="text-xl font-bold font-display">{t.admin_portal}</h2>
-              <p className="text-xs text-navy-200">{t.admin_subtitle}</p>
+              <h2 className="text-xl font-bold font-display text-text">{t.admin_portal}</h2>
+              <p className="text-xs text-text-soft">{t.admin_subtitle}</p>
             </div>
 
             <form onSubmit={handleLogin} className="flex flex-col gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-gold-400">E-mail</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gold-600">E-mail</label>
                 <input 
                   type="email"
                   placeholder="admin@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-navy-900/60 border border-white/15 text-white focus:outline-none focus:border-gold-400 transition-colors text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-bg-alt border border-border text-text focus:outline-none focus:border-gold-400 transition-colors text-sm font-semibold"
                   required
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-gold-400">Password</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gold-600">Password</label>
                 <input 
                   type="password"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-navy-900/60 border border-white/15 text-white focus:outline-none focus:border-gold-400 transition-colors text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-bg-alt border border-border text-text focus:outline-none focus:border-gold-400 transition-colors text-sm font-semibold"
                   required
                 />
               </div>
 
               {loginError && (
-                <div className="flex items-center gap-2 text-red-400 bg-red-950/30 border border-red-500/20 px-4 py-2.5 rounded-xl text-xs mt-1">
+                <div className="flex items-center gap-2 text-red-600 bg-red-50 border border-red-200 px-4 py-2.5 rounded-xl text-xs mt-1">
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span className="font-semibold">{loginError}</span>
                 </div>
@@ -585,7 +598,7 @@ export default function AdminDashboard({ params }) {
           </div>
 
           <div className="text-center mt-8">
-            <Link href={`/${lang}`} className="text-xs text-navy-200 hover:text-gold-400 transition-colors">
+            <Link href={`/${lang}`} className="text-xs text-text-soft hover:text-gold-600 transition-colors">
               ← {lang === 'de' ? 'Zurück zur Website' : lang === 'en' ? 'Back to website' : 'Retour au site'}
             </Link>
           </div>
@@ -597,7 +610,7 @@ export default function AdminDashboard({ params }) {
   // Dashboard Loader State
   if (isLoadingData) {
     return (
-      <div className="min-h-screen bg-bg text-text flex items-center justify-center">
+      <div className="min-h-screen bg-bg text-text flex items-center justify-center" style={lightThemeStyle}>
         <div className="flex flex-col items-center gap-3">
           <RefreshCw className="w-8 h-8 text-gold-500 animate-spin" />
           <span className="text-xs font-bold uppercase tracking-widest text-text-soft">{t.loading}</span>
@@ -608,7 +621,7 @@ export default function AdminDashboard({ params }) {
 
   // Authenticated Main View
   return (
-    <div className="min-h-screen bg-bg text-text relative bg-grid-pattern pb-12">
+    <div className="min-h-screen bg-bg text-text relative bg-grid-pattern pb-12" style={lightThemeStyle}>
       {/* Top Banner Accent */}
       <div className="german-flag-accent w-full" />
 

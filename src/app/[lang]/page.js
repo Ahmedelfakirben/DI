@@ -110,8 +110,8 @@ export default async function HomePage({ params }) {
         className="relative overflow-hidden py-28 md:py-36 text-white bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/hero_banner.png')" }}
       >
-        {/* Dark overlay for maximum contrast and legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gold-400/20 via-navy-950/65 to-navy-950/85 pointer-events-none" />
+        {/* Dark overlay with gold tint for maximum contrast and legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/25 via-navy-950/50 to-navy-950/75 pointer-events-none" />
         
         {/* Glow Spheres */}
         <ParallaxOrb color="gold" speed={0.15} size="w-[450px] h-[450px]" top="10%" right="10%" animationClass="animate-orb-1" opacity="opacity-[0.22]" />
@@ -431,8 +431,8 @@ export default async function HomePage({ params }) {
         className="py-24 text-white relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/hero_offres.png')" }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/90 to-navy-950/95 pointer-events-none z-0" />
+        {/* Warm overlay with gold tint for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gold-500/15 via-navy-950/60 to-navy-950/80 pointer-events-none z-0" />
         
         {/* Glow Spheres */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
