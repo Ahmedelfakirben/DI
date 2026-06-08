@@ -395,19 +395,19 @@ export async function registerStudentAction(formData, lang) {
     const transporter = getTransporter();
     if (transporter) {
       const emailHtml = getHtmlEmailTemplate(insertedRegistration, examDetails, copy, lang);
-      const logoPath = path.join(process.cwd(), 'public', 'logo.svg');
-      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_white.svg');
+      const logoPath = path.join(process.cwd(), 'public', 'logo_email.png');
+      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_email_white.png');
       const attachments = [];
       if (fs.existsSync(logoPath)) {
         attachments.push({
-          filename: 'logo.svg',
+          filename: 'logo_email.png',
           path: logoPath,
           cid: 'logo'
         });
       }
       if (fs.existsSync(logoWhitePath)) {
         attachments.push({
-          filename: 'logo_white.svg',
+          filename: 'logo_email_white.png',
           path: logoWhitePath,
           cid: 'logo_white'
         });
@@ -638,19 +638,19 @@ export async function sendPaymentConfirmationEmailAction(reg, exam, lang = 'fr')
     const transporter = getTransporter();
     if (transporter) {
       const emailHtml = getPaymentConfirmedHtmlTemplate(reg, exam, copy, lang);
-      const logoPath = path.join(process.cwd(), 'public', 'logo.svg');
-      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_white.svg');
+      const logoPath = path.join(process.cwd(), 'public', 'logo_email.png');
+      const logoWhitePath = path.join(process.cwd(), 'public', 'logo_email_white.png');
       const attachments = [];
       if (fs.existsSync(logoPath)) {
         attachments.push({
-          filename: 'logo.svg',
+          filename: 'logo_email.png',
           path: logoPath,
           cid: 'logo'
         });
       }
       if (fs.existsSync(logoWhitePath)) {
         attachments.push({
-          filename: 'logo_white.svg',
+          filename: 'logo_email_white.png',
           path: logoWhitePath,
           cid: 'logo_white'
         });
