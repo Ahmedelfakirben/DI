@@ -69,6 +69,28 @@
   --radial-glow: radial-gradient(circle, rgba(201,162,39,0.15) 0%, transparent 65%);
 }
 
+[data-theme="light"] {
+  --bg: #f4f6fb;
+  --bg-alt: #ffffff;
+  --bg-card: #ffffff;
+  --bg-muted: #eef2f6;
+  --border: rgba(13, 27, 62, 0.08);
+  --text: #060d1f;
+  --text-soft: #374151;
+  --text-muted: #6b7280;
+  --shadow-gold: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-bg-card: var(--bg-card);
+  --color-bg-muted: var(--bg-muted);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
+  --color-text-muted: var(--text-muted);
+}
+
 /* ── Base Styles ───────────────────────────────────────── */
 html {
   scroll-behavior: smooth;

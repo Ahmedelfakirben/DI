@@ -288,6 +288,13 @@ export default function AdminDashboard({ params }) {
   const [reassigningReg, setReassigningReg] = useState(null);
   const [isReassignModalOpen, setIsReassignModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'light');
+    return () => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    };
+  }, []);
+
   // Check auth cookie on mount
   useEffect(() => {
     async function checkAuth() {
@@ -532,7 +539,7 @@ export default function AdminDashboard({ params }) {
   // Unauthenticated Login View
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-bg flex flex-col justify-center items-center px-6 py-12 relative overflow-hidden bg-grid-pattern text-text" style={lightThemeStyle}>
+      <div className="min-h-screen bg-bg flex flex-col justify-center items-center px-6 py-12 relative overflow-hidden bg-grid-pattern text-text theme-light" style={lightThemeStyle}>
         {/* Glow Spheres */}
         <div className="absolute top-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-gold-400/5 blur-[90px] pointer-events-none" />
         <div className="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-navy-500/5 blur-[80px] pointer-events-none" />
@@ -610,7 +617,7 @@ export default function AdminDashboard({ params }) {
   // Dashboard Loader State
   if (isLoadingData) {
     return (
-      <div className="min-h-screen bg-bg text-text flex items-center justify-center" style={lightThemeStyle}>
+      <div className="min-h-screen bg-bg text-text flex items-center justify-center theme-light" style={lightThemeStyle}>
         <div className="flex flex-col items-center gap-3">
           <RefreshCw className="w-8 h-8 text-gold-500 animate-spin" />
           <span className="text-xs font-bold uppercase tracking-widest text-text-soft">{t.loading}</span>
@@ -621,7 +628,7 @@ export default function AdminDashboard({ params }) {
 
   // Authenticated Main View
   return (
-    <div className="min-h-screen bg-bg text-text relative bg-grid-pattern pb-12" style={lightThemeStyle}>
+    <div className="min-h-screen bg-bg text-text relative bg-grid-pattern pb-12 theme-light" style={lightThemeStyle}>
       {/* Top Banner Accent */}
       <div className="german-flag-accent w-full" />
 

@@ -10,7 +10,10 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    // Force dark theme permanently for navy/gold brand identity
+    // Force dark theme permanently for navy/gold brand identity, except on admin dashboard
+    if (typeof window !== 'undefined' && window.location.pathname.includes('/admin')) {
+      return;
+    }
     document.documentElement.setAttribute('data-theme', 'dark');
   }, []);
 
